@@ -13,11 +13,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 ReactDOM.render((
   <Router>
     <React.Fragment>
+      <br></br><br></br>
+      <Navbar /><br></br><br></br>
       <Route exact path="/" component={Home} />
       <Route exact path="/resume" component={Resume} />
       <Route exact path="/projects" component={Projects}/>
       <Route exact path="/about" component={About}/>
-      <Navbar />
     </React.Fragment>
   </Router>),
   document.getElementById('root')
