@@ -3,3 +3,9 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.circle-button {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}

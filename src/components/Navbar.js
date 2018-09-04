@@ -5,38 +5,18 @@ const Navbar = () => {
 
   return (
     <div>
-      <NavLink
-        to="/"
-        exact
-        // style={}
-        activeStyle={{
-
-        }}
-      >Home</NavLink>
-      <NavLink
-        to="/about"
-        exact
-        // style={}
-        activeStyle={{
-
-        }}
-      >About</NavLink>
-      <NavLink
-        to="/projects"
-        exact
-        // style={}
-        activeStyle={{
-
-        }}
-      >Projects</NavLink>
-    <NavLink
-      to="/Resume"
-      exact
-      // style={}
-      activeStyle={{
-
-      }}
-    >Resume</NavLink>
+      <NavLink to="/">
+        <button className='circle-button'>Home</button>
+      </NavLink>
+      <NavLink to="/about">
+        <button className='circle-button'>About</button>
+      </NavLink>
+      <NavLink to="/projects">
+        <button className='circle-button'>Projects</button>
+      </NavLink>
+      <NavLink to="/resume">
+        <button className='circle-button'>Resume</button>
+      </NavLink>
     </div>
   )
 }
