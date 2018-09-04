@@ -5,7 +5,7 @@ class Projects extends React.Component{
   render(){
     return (
       <div>
-        projects
+        <h1>Projects!</h1>
       </div>
     )
   }

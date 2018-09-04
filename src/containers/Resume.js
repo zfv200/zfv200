@@ -5,7 +5,7 @@ class Resume extends React.Component{
   render(){
     return (
       <div>
-        Resume
+        <h1>Projects!</h1>
       </div>
     )
   }
