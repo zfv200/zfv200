@@ -4,8 +4,31 @@ body {
   font-family: sans-serif;
 }
 
+/* buttons */
+
 .circle-button {
   border-radius: 50%;
   height: 80px;
   width: 80px;
+  box-shadow: 5px 5px;
+  /* border-color: black; */
+  transform: scale(1);
+  transition-duration: 2s;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.circle-button:hover {
+  transition-duration: 2s;
+  transform: scale(2)
+}
+
+
+/* text */
+
+h1{
+  text-align: center
 }
