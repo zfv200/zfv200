@@ -59,6 +59,19 @@ body {
   width: 50%;
 }
 
+.resume-tile {
+  margin: auto;
+  width: 50%;
+  background-color: "white";
+  transition: 500ms ease-in;
+  padding: 25px;
+}
+
+.resume-tile:hover {
+  background-color: lightgray;
+  transition: 500ms ease-in
+}
+
 /* react transitions */
 
 .example-enter {
