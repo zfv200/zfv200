@@ -11,6 +11,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 ReactDOM.render((
+  <div>
+  <App/>
   <Router>
     <React.Fragment>
       <br></br><br></br>
@@ -20,7 +22,7 @@ ReactDOM.render((
       <Route exact path="/projects" component={Projects}/>
       <Route exact path="/about" component={About}/>
     </React.Fragment>
-  </Router>),
+  </Router></div>),
   document.getElementById('root')
 );
 
