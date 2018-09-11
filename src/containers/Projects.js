@@ -1,5 +1,6 @@
 import React from 'react'
 import Project from '../components/Project'
+import FadeIn from 'react-fade-in';
 
 class Projects extends React.Component{
 
@@ -58,9 +59,9 @@ class Projects extends React.Component{
 
   render(){
     return (
-      <div>
+      <FadeIn transitionDuration="600">
         {this.renderProjects()}
-      </div>
+      </FadeIn>
     )
   }
 }
