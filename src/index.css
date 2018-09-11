@@ -3,7 +3,6 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
 /* buttons */
 
 .circle-button {
@@ -24,9 +23,8 @@ body {
 
 .circle-button:hover {
   transition-duration: 2s;
-  transform: scale(2)
+  transform: scale(1.9)
 }
-
 
 /* text */
 

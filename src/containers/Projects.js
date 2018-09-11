@@ -5,6 +5,8 @@ import FadeIn from 'react-fade-in';
 class Projects extends React.Component{
 
   state={
+    toggled: false,
+    collapsed: true,
     projects: [{
       title: "Dream Collage",
       stack: "React/Redux/Rails Api",
@@ -53,7 +55,13 @@ class Projects extends React.Component{
 
   renderProjects = () => {
     return this.state.projects.map((project)=>{
-      return <Project {...project} />
+      return <Project toggled={this.state.toggled} collapsed={this.state.collapsed} {...project} />
+    })
+  }
+
+  handleCollapsed = () => {
+    this.setState({
+      collapsed: true
     })
   }
 
