@@ -9,19 +9,27 @@ class Project extends React.Component{
   }
 
   handleClick = () => {
+    this.props.triggerUpdate()
     let currentToggle = this.state.toggled
     this.setState({
       toggled: !currentToggle
     })
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot){
+    if (prevState.toggled===true){
+      this.setState({
+        toggled: false
+      })
+    }
+  }
+
   render(){
-    console.log("toggled", this.state.toggled, "collapsed", this.state.collapsed);
     return(
       <div>
         <h1 className="projectTitle" onClick={this.handleClick}>{this.props.title}</h1>
         <p className="stack">{this.props.stack}</p>
-        {!this.state.collapsed && this.state.toggled ?
+        {this.state.toggled ?
           <FadeIn>
           <div>
           <p className="centered">{this.props.description}</p>

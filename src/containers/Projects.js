@@ -55,13 +55,14 @@ class Projects extends React.Component{
 
   renderProjects = () => {
     return this.state.projects.map((project)=>{
-      return <Project toggled={this.state.toggled} collapsed={this.state.collapsed} {...project} />
+      return <Project triggerUpdate={this.triggerUpdate} toggled={this.state.toggled} collapsed={this.state.collapsed} {...project} />
     })
   }
 
-  handleCollapsed = () => {
+  triggerUpdate = () => {
+    let currentCollapsed = this.state.collapsed
     this.setState({
-      collapsed: true
+      collapsed: !currentCollapsed
     })
   }
 
