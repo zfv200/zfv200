@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ResumeTile = (props) => {
-  
+
   const renderPoints = () => {
     return props.bpoints.map((point)=>{
       return <li>{point}</li>
