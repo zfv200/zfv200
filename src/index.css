@@ -40,13 +40,13 @@ body {
 
 .button-click {
   position: absolute;
-  top: 25%;
-  left: 30%;
+  top: 13.7%;
+  left: 30.5%;
   margin: -50px 0 0 -50px;
   border-radius: 50%;
   height: 600px;
   width: 600px;
-  box-shadow: 5px 5px 5px 5px;
+  /* box-shadow: 5px 5px 5px 5px; */
   /* border-color: black; */
   /* transform: scale(4); */
   /* transition: opacity 3s; */
@@ -88,6 +88,11 @@ body {
 .stack {
   text-align: center;
   font-style: italic;
+}
+
+.summary {
+  margin: auto;
+  width: 50%;
 }
 
 /* resume */

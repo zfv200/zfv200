@@ -5,9 +5,6 @@ const Navbar = () => {
 
   return (
     <div className='button-container'>
-      <NavLink to="/">
-        <button className='circle-button'>Home</button>
-      </NavLink>
       <NavLink to="/about">
         <button className='circle-button'>About</button>
       </NavLink>

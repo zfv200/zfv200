@@ -1,11 +1,29 @@
 import React from 'react'
+import {Link, BrowserRouter as Router} from 'react-router-dom'
 
-const Enter = (props) => {
-  return (
-    <div onClick={props.enterSite}>
-      <button className='alt-button' >Enter</button>
-    </div>
-  )
+class Enter extends React.Component {
+  // state={
+  //   clicked: false
+  // }
+  //
+  // handleClick = () => {
+  //   console.log("hi");
+  //   this.setState({
+  //     clicked: true
+  //   })
+  // }
+
+  render(){
+    return (
+      <div onClick={this.props.enterSite}>
+        <Router>
+          <Link to="/about">
+            <button onClick={this.props.handleClick} className='alt-button' >Enter</button>
+          </Link>
+        </Router>
+      </div>
+    )
+  }
 }
 
 export default Enter
