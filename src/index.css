@@ -85,6 +85,12 @@ body {
   width: 50%;
 }
 
+.left {
+  text-align: left;
+  margin: auto;
+  width: 70%;
+}
+
 .stack {
   text-align: center;
   font-style: italic;
