@@ -68,6 +68,28 @@ body {
 
 /* text */
 
+.footer-text {
+  opacity: .4;
+}
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.banner {
+  padding-top: 15px;
+  margin: 0px;
+  display: block;
+  top: 80px;
+  width: 100%;
+  color: black;
+  background-color: gray;
+  height: 40px;
+  opacity: 0.6;
+}
+
 .projectTitle {
   text-align: center;
 }

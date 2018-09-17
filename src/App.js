@@ -8,6 +8,7 @@ import Resume from './containers/Resume'
 import Projects from './containers/Projects'
 import About from './containers/About'
 import Enter from './components/Enter'
+import Footer from './components/Footer'
 
 import './App.css';
 
@@ -69,8 +70,9 @@ class App extends Component {
         <div className="App">
           <div>
           <div className="App-header">
-          <image className="image" src="./stars_wallpaper_by_silent_broken_wish.jpg"/>
+          <h1 className="App-title">Zach Vary</h1>
           </div>
+          <h3 className="banner">Full Stack Web Developer</h3>
           <Router>
             <React.Fragment>
               <br></br><br></br>
@@ -88,6 +90,7 @@ class App extends Component {
             <Enter handleClick={this.handleClick} enterSite={this.enterSite}/>
           </div>
         }
+        <Footer />
       </div>
     );
   }
