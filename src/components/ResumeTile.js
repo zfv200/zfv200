@@ -11,7 +11,11 @@ const ResumeTile = (props) => {
   return(
     <div className="resume-tile">
       <p className="stack">{props.title}</p>
-      {renderPoints()}
+      <div className="list-res">
+        <ul className="left-res">
+          {renderPoints()}
+        </ul>
+      </div>
     </div>
   )
 }

@@ -10,7 +10,7 @@ class Projects extends React.Component{
     projects: [{
       title: "Dream Collage",
       stack: "React/Redux/Rails Api",
-      ghlF: "https://github.com/zfv200/dream-collage-frontend",
+      bhlF: "https://github.com/zfv200/dream-collage-frontend",
       ghlB: "https://github.com/zfv200/dream-rails-api",
       description: "Generate custom collages based on an interpretive analysis of your dream journal.",
       demo: '',

@@ -64,7 +64,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="full-background">
         {this.state.entered && localStorage.length > 0 ?
         <FadeIn delay="200">
         <div className="App">
