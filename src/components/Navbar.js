@@ -6,13 +6,13 @@ const Navbar = () => {
   return (
     <div className='button-container'>
       <NavLink to="/about">
-        <button className='circle-button'>About</button>
+        <button className='circle-button'><p className="button-text">About</p></button>
       </NavLink>
       <NavLink to="/projects">
-        <button className='circle-button'>Projects</button>
+        <button className='circle-button'><p className="button-text">Projects</p></button>
       </NavLink>
       <NavLink to="/resume">
-        <button className='circle-button'>Resume</button>
+        <button className='circle-button'><p className="button-text">Resume</p></button>
       </NavLink>
     </div>
   )

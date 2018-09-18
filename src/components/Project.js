@@ -41,7 +41,7 @@ class Project extends React.Component{
       <div>
         <h1 className="projectTitle" onClick={this.handleClick}>{this.props.title}</h1>
         <p className="stack">{this.props.stack}</p>
-        <a href={this.props.bhlF}>Github</a> {this.githubBackEnd()} {this.demo()}
+        <a href={this.props.bhlF}>Github</a> <text className="footer-text"> | </text> {this.githubBackEnd()} {this.demo()}
         {this.state.toggled ?
           <FadeIn>
           <div>

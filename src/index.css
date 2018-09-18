@@ -1,11 +1,22 @@
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+
+body {
+  background-image: url('./stars.png');
+  height: 100%;
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* z-index: 1; */
+}
 /* buttons */
 
 .circle-button {
+  background-color: black;
   border-radius: 50%;
   height: 80px;
   width: 80px;
@@ -16,8 +27,13 @@ body {
   outline: none !important;
 }
 
+.button-text {
+  color: white;
+}
+
 .alt-button {
   /* position: absolute; */
+  background-color: black;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,14 +42,17 @@ body {
   border-radius: 50%;
   height: 80px;
   width: 80px;
-  box-shadow: 5px 5px;
+  transform: scale(1);
+  transition-duration: 2s;
+  /* box-shadow: 5px 5px; */
   /* border-color: black; */
   /* transform: scale(4); */
-  transition-duration: 2s;
-  outline: none !important;
+  /* transition-duration: 2s; */
+  /* outline: none !important; */
 }
 
 .alt-button:hover {
+  box-shadow: 1px 1px 2px white, 0 0 25px white, 0 0 5px gold;
   transition-duration: 2s;
   transform: scale(1.9)
 }
@@ -62,6 +81,7 @@ body {
 }
 
 .circle-button:hover {
+  box-shadow: 1px 1px 2px white, 0 0 25px white, 0 0 5px gold;
   transition-duration: 2s;
   transform: scale(1.9)
 }
@@ -69,7 +89,8 @@ body {
 /* text */
 
 .footer-text {
-  opacity: .4;
+  opacity: .7;
+  color: grey;
 }
 
 .footer {
@@ -79,32 +100,43 @@ body {
 }
 
 .banner {
-  padding-top: 15px;
+  padding-top: 9px;
   margin: 0px;
   display: block;
   top: 80px;
   width: 100%;
-  color: black;
+  color: white;
   background-color: gray;
-  height: 40px;
-  opacity: 0.6;
+  height: 30px;
+  opacity: 0.3;
 }
 
 .projectTitle {
   text-align: center;
+  color: lightgray;
+  transition: 500ms ease-in;
 }
 .projectTitle:hover {
+  transition: 500ms ease-in;
   color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px darkblue;
+  text-shadow: 1px 1px 2px white, 0 0 25px white, 0 0 5px gold;
 }
 
 .centered {
   text-align: center;
+  color: lightgray;
 }
 
 .list {
+  color: lightgray;
   margin: auto;
   width: 50%;
+}
+
+.list-res {
+  color: lightgray;
+  margin: auto;
+  width: 80%;
 }
 
 .left {
@@ -114,6 +146,7 @@ body {
 }
 
 .stack {
+  color: lightgray;
   text-align: center;
   font-style: italic;
 }
@@ -121,6 +154,7 @@ body {
 .summary {
   margin: auto;
   width: 50%;
+  color: lightgray;
 }
 
 /* resume */
@@ -136,11 +170,16 @@ body {
   width: 50%;
   background-color: "white";
   transition: 500ms ease-in;
-  padding: 35px;
+  padding: 10px;
+}
+
+.left-res {
+  text-align: left;
 }
 
 .resume-tile:hover {
-  background-color: lightgray;
+  /* background-color: lightgray; */
+  /* text-shadow: 1px 1px 1px white, 0 0 10px white, 0 0 3px gold; */
   transition: 500ms ease-in
 }
 
@@ -163,3 +202,5 @@ body {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
+
+/* images */

@@ -18,7 +18,7 @@ class Enter extends React.Component {
       <div onClick={this.props.enterSite}>
         <Router>
           <Link to="/about">
-            <button onClick={this.props.handleClick} className='alt-button' >Enter</button>
+            <button onClick={this.props.handleClick} className='alt-button' ><p className="button-text">Enter</p></button>
           </Link>
         </Router>
       </div>
