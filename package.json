@@ -2,7 +2,7 @@
   "name": "personalsite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zfv200.github.com/io/site/public/index.html",
+  "homepage": "https://zfv200.github.com/io/site/",
   "dependencies": {
     "gh-pages": "^2.0.0",
     "react": "^16.4.2",
