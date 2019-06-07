@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
 import { Redirect } from 'react-router'
 import FadeIn from 'react-fade-in';
 import Navbar from './components/Navbar'
-import Home from './containers/Home'
-import Resume from './containers/Resume'
+import Experience from './containers/Experience'
 import Projects from './containers/Projects'
 import About from './containers/About'
 import Enter from './components/Enter'
 import Footer from './components/Footer'
+import Learning from './containers/Learning'
 
 import './App.css';
 
@@ -57,34 +57,30 @@ class App extends Component {
     return <Enter />
   }
 
-  // renderAbout = () => {
-  //   // this.props.
-  //   return <About/>
-  // }
-
   render() {
     return (
       <div className="full-background">
         {this.state.entered && localStorage.length > 0 ?
         <FadeIn delay="200">
-        <div className="App">
-          <div>
-          <div className="App-header">
-          <h1 className="App-title">Zach Vary</h1>
-          </div>
-          <h3 className="banner">Full Stack Web Developer</h3>
-          <Router>
-            <React.Fragment>
-              <br></br><br></br>
-              <Navbar /><br></br><br></br>
-              <Route exact path="/" render={this.leaveSite}/>
-              <Route exact path="/resume" component={Resume} />
-              <Route exact path="/projects" component={Projects}/>
-              <Route exact path="/about" component={About}/>
-            </React.Fragment>
-          </Router>
-          </div>
-          </div>
+          <div className="App">
+            <div>
+              <div className="App-header">
+              <NavLink to="/about" style={{textDecoration: 'none'}}>
+                <h1 className="App-title">Zach Vary</h1>
+              </NavLink>
+              </div>
+              <h3 className="banner">Full Stack Web Developer</h3>
+                <React.Fragment>
+                  <br></br><br></br>
+                  <Navbar /><br></br><br></br>
+                  <Route exact path="/" render={this.leaveSite}/>
+                  <Route exact path="/experience" component={Experience} />
+                  <Route exact path="/projects" component={Projects}/>
+                  <Route exact path="/about" component={About}/>
+                  <Route exact path="/learning" component={Learning}/>
+                </React.Fragment>
+              </div>
+            </div>
           </FadeIn>
         : <div>
             <Enter handleClick={this.handleClick} enterSite={this.enterSite}/>
