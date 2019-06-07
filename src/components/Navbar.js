@@ -3,17 +3,40 @@ import {NavLink} from 'react-router-dom'
 
 const Navbar = () => {
 
+  const buttons = [
+    {
+      route: '/about',
+      text: "About"
+    },
+    {
+      route: '/projects',
+      text: "Projects"
+    },
+    {
+      route: '/experience',
+      text: "Experience"
+    },
+    {
+      route: '/learning',
+      text: "Learning"
+    },
+  ]
+
+  const renderButtons = () => {
+    return buttons.map((button)=>{
+      return (
+        <React.Fragment>
+          <NavLink to={button.route}>
+            <button className='circle-button'><p className="button-text">{button.text}</p></button>
+          </NavLink>
+        </React.Fragment>
+      )
+    })
+  }
+
   return (
     <div className='button-container'>
-      <NavLink to="/about">
-        <button className='circle-button'><p className="button-text">About</p></button>
-      </NavLink>
-      <NavLink to="/projects">
-        <button className='circle-button'><p className="button-text">Projects</p></button>
-      </NavLink>
-      <NavLink to="/resume">
-        <button className='circle-button'><p className="button-text">Resume</p></button>
-      </NavLink>
+      {renderButtons()}
     </div>
   )
 }

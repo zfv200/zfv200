@@ -4,12 +4,15 @@ import FadeIn from 'react-fade-in';
 import ResumeTile from '../components/ResumeTile'
 
 
-class Resume extends React.Component {
+class Experience extends React.Component {
 
   state={
     techToggled: false,
     workToggled: false,
     eduToggled: false,
+  }
+
+  info = {
     workComps: [{
       title: "Flatiron School",
       bpoints: ["Mastered Flatiron curriculum in order to effectively work one-on-one with students tackling complex problems, frameworks, projects, and algorithms",
@@ -44,18 +47,20 @@ class Resume extends React.Component {
       ]
     }],
     languages: [
-      "Ruby", "Javascript", "React", "Redux", "Ruby on Rails", "SQL", "HTML", "CSS"
+      "Ruby", "Javascript", "React", "Redux", "Ruby on Rails", "TypeScript", "SQL", "HTML", "CSS"
     ]
   }
 
+
+
   renderWork = (type) => {
-    return this.state[type].map((entry)=>{
+    return this.info[type].map((entry)=>{
       return <ResumeTile {...entry}/>
     })
   }
 
   renderLanguages = () => {
-    return this.state.languages.map((language)=>{
+    return this.info.languages.map((language)=>{
       return <p>{language}</p>
     })
   }
@@ -80,8 +85,7 @@ class Resume extends React.Component {
         {this.state.techToggled ?
         <FadeIn>
         <div>
-          <h3 className="stack">Languages</h3>
-            {this.renderLanguages()}
+          {this.renderLanguages()}
         </div>
         </FadeIn>
         : null}
@@ -107,41 +111,4 @@ class Resume extends React.Component {
   }
 }
 
-export default Resume
-
-// <div>
-// <FadeIn>
-// <div className="resume-tile">
-//   <p className="stack">Flatiron School</p>
-//   <p>Full Stack Web Development, Ruby on Rails and JavaScript/React immersive in-person program
-// </p>
-// </div>
-// <div className="resume-tile">
-//   <p className="stack">New York University</p>
-//   <p>Graduated in May 2013, receiving a B.A. in Individualized Study with a focus on Philosophy and create writing</p>
-//   <p>Earned the NYU Founder’s Day Award as a Senior for “outstanding scholarship”</p>
-//   <p>Overall GPA: 3.57/4.0 at the Gallatin School of Individualized Study at NYU
-// </p>
-// </div>
-// </FadeIn>
-// </div>
-
-// class Resume extends React.Component {
-//   state = {
-//     pageNumber: 1,
-//   }
-//
-//   render() {
-//     const { pageNumber } = this.state;
-//
-//     return (
-//       <div className="resume">
-//         <Document file="ZVaryResume.pdf">
-//           <Page pageNumber={pageNumber} />
-//         </Document>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Resume
+export default Experience
