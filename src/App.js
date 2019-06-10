@@ -16,21 +16,23 @@ class App extends Component {
 
   state={
     entered: false,
-    clicked: false
+    clicked: false,
+
   }
 
   enterSite = (event) => {
     event.target.className = "button-click"
     let siteEntered = this.state.entered
+    localStorage.setItem('entered', 1)
     this.setState({
       entered: true
     })
-    localStorage.setItem('entered', 1)
   }
 
   componentDidMount(){
     if (window.location.href.slice(-1)==="/"){
       localStorage.clear()
+      // debugger
       this.setState({
         entered: false
       })
@@ -50,11 +52,15 @@ class App extends Component {
   }
 
   leaveSite = () => {
-    localStorage.clear()
-    this.setState({
-      entered: false
-    })
-    return <Enter />
+    if(window.location.href.slice(-1)==="/"){
+      localStorage.clear()
+      this.setState({
+        entered: false
+      })
+      return <Enter />
+    } else {
+      return <About />
+    }
   }
 
   render() {

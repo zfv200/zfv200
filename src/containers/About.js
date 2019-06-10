@@ -4,9 +4,15 @@ import FadeIn from 'react-fade-in';
 import pic from '../profpic.jpeg'
 
 class About extends React.Component{
+  state={
+    loaded: false
+  }
 
   componentDidMount(){
     window.scrollTo(window.innerHeight, window.innerWidth)
+    this.setState({
+      loaded: true
+    })
   }
 
   summary = () => {

@@ -26,13 +26,13 @@ class Project extends React.Component{
 
   githubBackEnd = () => {
     if (this.props.ghlB){
-      return <a href={this.props.ghlB}>Github API</a>
+      return <text className="footer-text">| <a href={this.props.ghlB}>Github API</a></text>
     }
   }
 
   demo = () => {
     if (this.props.demo){
-      return <a href={this.props.demo}>Demo</a>
+      return <text className="footer-text">| <a href={this.props.demo}>Demo</a></text>
     }
   }
 
@@ -41,11 +41,13 @@ class Project extends React.Component{
       <div>
         <h1 className="projectTitle" onClick={this.handleClick}>{this.props.title}</h1>
         <p className="stack">{this.props.stack}</p>
-        <a href={this.props.bhlF}>Github</a> <text className="footer-text"> | </text> {this.githubBackEnd()} {this.demo()}
+        <p className="centered">{this.props.description}</p>
+        <a href={this.props.bhlF}>Github</a> <text className="footer-text"> </text> {this.githubBackEnd()} {this.demo()}
+        <br></br>
         {this.state.toggled ?
           <FadeIn>
           <div>
-          <p className="centered">{this.props.description}</p>
+          <img src={this.props.screenshot} className="screenshot"/><br></br>
             <div className="list">
               <ul className="left">
               <li>{this.props.line1}</li>
