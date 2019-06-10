@@ -28,7 +28,7 @@ const Footer = () => {
     return links.map((link) => {
       return (
         <React.Fragment>
-          <a href={link.url}>{link.text}</a>
+          <a target="_blank" href={link.url}>{link.text}</a>
           <text className="footer-text">  |  </text>
         </React.Fragment>
       )
