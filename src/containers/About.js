@@ -9,7 +9,7 @@ class About extends React.Component{
   }
 
   componentDidMount(){
-    window.scrollTo(window.innerHeight, window.innerWidth)
+    // window.scrollTo(window.innerHeight, window.innerWidth)
     this.setState({
       loaded: true
     })
@@ -18,7 +18,7 @@ class About extends React.Component{
   summary = () => {
     return (
       <p>Dedicated Full Stack Web Developer with a commitment to collaborative learning, education, development and production.
-Integrating experience in Javascript, React, and Ruby/Rails with a background in philosophy, I am happiest when working
+Integrating experience in Javascript, React, and Ruby/Rails with a background in philosophy and music, I am happiest when working
 with a team of driven and creative developers committed to reaching new heights with software and web technology.</p>
     )
   }
@@ -26,11 +26,13 @@ with a team of driven and creative developers committed to reaching new heights 
   render(){
     return(
       <FadeIn>
-        <div>
-          <img src={pic} id="pic"/>
-        </div>
-        <div className="summary">
-          {this.summary()}
+        <div style={{display: 'flex', flexDirection: "row", marginBottom: '80px'}}>
+          <div style={{marginLeft: '120px'}}>
+            <img src={pic} id="pic"/>
+          </div>
+          <div className="summary">
+            {this.summary()}
+          </div>
         </div>
       </FadeIn>
     )
