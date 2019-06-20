@@ -1,5 +1,6 @@
 import React from 'react'
 import FadeIn from 'react-fade-in';
+import Footer from '../components/Footer'
 
 import pic from '../profpic.jpeg'
 
@@ -26,9 +27,12 @@ with a team of driven and creative developers committed to reaching new heights 
   render(){
     return(
       <FadeIn>
-        <div style={{display: 'flex', flexDirection: "row", marginBottom: '80px'}}>
-          <div style={{marginLeft: '120px'}}>
+        <div style={{display: 'flex', flexDirection: "column", marginBottom: '80px'}}>
+          <div>
             <img src={pic} id="pic"/>
+          </div>
+          <div>
+            <Footer />
           </div>
           <div className="summary">
             {this.summary()}

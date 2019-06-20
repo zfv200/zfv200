@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
-import { Redirect } from 'react-router'
+import { Redirect, withRouter } from 'react-router'
 import FadeIn from 'react-fade-in';
 import Navbar from './components/Navbar'
 import Experience from './containers/Experience'
@@ -17,7 +17,6 @@ class App extends Component {
   state={
     entered: false,
     clicked: false,
-
   }
 
   enterSite = (event) => {
@@ -92,10 +91,10 @@ class App extends Component {
             <Enter handleClick={this.handleClick} enterSite={this.enterSite}/>
           </div>
         }
-        <Footer />
+        {this.props.location.pathname !== "/about" ? <Footer /> : null}
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

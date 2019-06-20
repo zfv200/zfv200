@@ -1,8 +1,9 @@
 import React from 'react'
 
 import Resume from '../Z Vary Resume.pdf'
+import { withRouter } from "react-router";
 
-const Footer = () => {
+const Footer = (props) => {
 
   const links = [
     {
@@ -35,15 +36,19 @@ const Footer = () => {
     })
   }
 
+  const footerClass = () => {
+    return props.location.pathname === "/about" ? "about-footer" : "footer"
+  }
+
   return (
-    <div className="footer">
-      <text className="footer-text">Zach Vary 2018  |  </text>
+    <div className={footerClass()}>
       {renderLinks()}
     </div>
   )
 }
+// <text className="footer-text">Zach Vary 2018  |  </text>
 
-export default Footer
+export default withRouter(Footer)
 
 // <a href="https://www.linkedin.com/in/zach-vary-382663163/">LinkedIn</a>
 // <text className="footer-text">  |  </text>

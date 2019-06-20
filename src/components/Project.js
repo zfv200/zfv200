@@ -1,6 +1,9 @@
 import React from 'react'
 import FadeIn from 'react-fade-in';
 
+import imageResizer from '../mobileHOCs/imageResizer'
+
+
 class Project extends React.Component{
 
   state={
@@ -55,7 +58,7 @@ class Project extends React.Component{
               </ul>
             </div>
             <br></br>
-            <img src={this.props.screenshot} className="screenshot"/><br></br>
+            <img src={this.props.screenshot} style={this.props.style}/><br></br>
           </div>
           </FadeIn>
         : null}
@@ -64,4 +67,4 @@ class Project extends React.Component{
   }
 }
 
-export default Project
+export default imageResizer(Project, 'project')
