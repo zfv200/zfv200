@@ -58,7 +58,7 @@ class Learning extends React.Component {
     return (
       <FadeIn transitionDuration="600">
         <div className="centered">
-        <h2 onClick={this.handleClick} id="completeToggled" className="projectTitle">Completed Courses</h2>
+        <h2 onClick={this.handleClick} id="completeToggled" className="projectTitle">Completed Udemy Courses</h2>
           {this.state.completeToggled ?
           <FadeIn>
           <div>

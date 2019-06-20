@@ -20,7 +20,7 @@ class Projects extends React.Component{
     stack: "React/Redux/TypeScript/Rails Api",
     bhlF: "https://github.com/zfv200/ghostlyrealty-frontend",
     ghlB: "https://github.com/zfv200/ghostlyrealty-backend",
-    description: "The finest real estate app for spirits and spectres, allowing ghosts to find a new house to haunt since 2019!",
+    description: "This app helps ghosts find a new house to haunt, and mediums to share haunted properties! A real-estate app with a fun twist.",
     demo: 'https://www.youtube.com/watch?v=VC5415-EdYA',
     line1: "React/Redux Front End with Typescript, Auth/Sessions with JWT, advanced React features, and Jest/Enzyme tests",
     line2: "Implemented AWS S3 for cloud storage with an integrated custom IBM Watson Visual Recognition machine learning model",
