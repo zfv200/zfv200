@@ -1,13 +1,22 @@
-body {
+/* body {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+} */
+
+html {
+  height: 100%;
+  overflow: auto;
 }
 
 body {
   background-image: url('./stars.png');
   height: 100%;
+  /* overflow: auto; */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
   /* background-position: center;
   background-repeat: no-repeat;
   background-size: cover; */
@@ -114,6 +123,7 @@ body {
 }
 
 .projectTitle {
+  position: relative;
   text-align: center;
   color: lightgray;
   transition: 500ms ease-in;

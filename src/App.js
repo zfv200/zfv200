@@ -31,7 +31,6 @@ class App extends Component {
   componentDidMount(){
     if (window.location.href.slice(-1)==="/"){
       localStorage.clear()
-      // debugger
       this.setState({
         entered: false
       })

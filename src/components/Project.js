@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import FadeIn from 'react-fade-in';
 
 import imageResizer from '../mobileHOCs/imageResizer'
@@ -6,17 +7,33 @@ import imageResizer from '../mobileHOCs/imageResizer'
 
 class Project extends React.Component{
 
-  state={
-    toggled: this.props.toggled,
-    collapsed: this.props.collapsed
+  constructor(props){
+    super(props)
+    this.state={
+      toggled: this.props.toggled,
+      collapsed: this.props.collapsed
+    }
+    this.ref = React.createRef()
   }
 
+  componentDidMount(){
+    this.node = ReactDOM.findDOMNode(this)
+  }
+
+  scrollToTitle = () => {
+    // if(window.pageYOffset > 300)
+    // window.scrollTo(0, window.pageYOffset - 350)
+  };
+
   handleClick = () => {
-    this.props.triggerUpdate()
-    let currentToggle = this.state.toggled
-    this.setState({
-      toggled: !currentToggle
-    })
+    if(this.state.toggled===false){
+      this.scrollToTitle()
+      this.props.triggerUpdate()
+      let currentToggle = this.state.toggled
+      this.setState({
+        toggled: !currentToggle
+      })
+    }
   }
 
   componentDidUpdate(prevProps, prevState, snapshot){
@@ -39,10 +56,11 @@ class Project extends React.Component{
     }
   }
 
+
   render(){
     return(
       <div>
-        <h1 className="projectTitle" onClick={this.handleClick}>{this.props.title}</h1>
+        <h1 className="projectTitle" ref={this.ref} onClick={this.handleClick}>{this.props.title}</h1>
         {this.state.toggled ?
           <FadeIn>
           <p className="stack">{this.props.stack}</p>

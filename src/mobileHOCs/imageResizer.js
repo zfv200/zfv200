@@ -24,13 +24,13 @@ function imageResizer(WrappedComponent, type){
     mobileStyle = () => {
       if(type==='project'){
         return {
-          width: '425px',
-          height: '260px'
+          width: '309px',
+          height: '240px'
         }
       } else {
         return {
-          width: '425px',
-          height: '260px'
+          width: '309px',
+          height: '240px'
         }
       }
     }
