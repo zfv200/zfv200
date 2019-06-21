@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import FadeIn from 'react-fade-in';
 
-import imageResizer from '../mobileHOCs/imageResizer'
+import mobileProps from '../mobileHOCs/mobileProps'
 
 
 class Project extends React.Component{
@@ -21,19 +21,20 @@ class Project extends React.Component{
   }
 
   scrollToTitle = () => {
-    // if(window.pageYOffset > 300)
-    // window.scrollTo(0, window.pageYOffset - 350)
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 450 + this.props.offset) {
+      window.requestAnimationFrame(this.scrollToTitle);
+      window.scrollTo(0, c - c / 20);
+    }
   };
 
   handleClick = () => {
-    if(this.state.toggled===false){
-      this.scrollToTitle()
-      this.props.triggerUpdate()
-      let currentToggle = this.state.toggled
-      this.setState({
-        toggled: !currentToggle
-      })
-    }
+    this.scrollToTitle()
+    this.props.triggerUpdate()
+    let currentToggle = this.state.toggled
+    this.setState({
+      toggled: !currentToggle
+    })
   }
 
   componentDidUpdate(prevProps, prevState, snapshot){
@@ -58,8 +59,32 @@ class Project extends React.Component{
 
 
   render(){
-    return(
-      <div>
+    if(this.props.isMobile){
+      return (
+        <div>
+          <h1 className="projectTitle">{this.props.title}</h1>
+            <FadeIn>
+            <p className="stack">{this.props.stack}</p>
+            <p className="centered stack">{this.props.description}</p>
+            <a href={this.props.bhlF} target="_blank">Github</a> <text className="footer-text"> </text> {this.githubBackEnd()} {this.demo()}
+            <br></br>
+            <div>
+              <div className="list">
+                <ul className="left">
+                <li>{this.props.line1}</li>
+                <li>{this.props.line2}</li>
+                <li>{this.props.line3}</li>
+                </ul>
+              </div>
+              <br></br>
+              <img src={this.props.screenshot} style={this.props.style}/><br></br>
+            </div>
+            </FadeIn>
+        </div>
+      )
+    } else {
+      return(
+        <div>
         <h1 className="projectTitle" ref={this.ref} onClick={this.handleClick}>{this.props.title}</h1>
         {this.state.toggled ?
           <FadeIn>
@@ -68,21 +93,22 @@ class Project extends React.Component{
           <a href={this.props.bhlF} target="_blank">Github</a> <text className="footer-text"> </text> {this.githubBackEnd()} {this.demo()}
           <br></br>
           <div>
-            <div className="list">
-              <ul className="left">
-              <li>{this.props.line1}</li>
-              <li>{this.props.line2}</li>
-              <li>{this.props.line3}</li>
-              </ul>
-            </div>
-            <br></br>
-            <img src={this.props.screenshot} style={this.props.style}/><br></br>
+          <div className="list">
+          <ul className="left">
+          <li>{this.props.line1}</li>
+          <li>{this.props.line2}</li>
+          <li>{this.props.line3}</li>
+          </ul>
+          </div>
+          <br></br>
+          <img src={this.props.screenshot} style={this.props.style}/><br></br>
           </div>
           </FadeIn>
-        : null}
-      </div>
-    )
+          : null}
+          </div>
+        )
+    }
   }
 }
 
-export default imageResizer(Project, 'project')
+export default mobileProps(Project, 'project')

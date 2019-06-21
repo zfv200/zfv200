@@ -1,6 +1,6 @@
 import React from 'react'
 
-function imageResizer(WrappedComponent, type){
+function mobileProps(WrappedComponent, type){
   class baseResizer extends React.Component{
 
     state={
@@ -41,11 +41,13 @@ function imageResizer(WrappedComponent, type){
           width: "900px",
           height: "500px"
         }
-      } else {
+      } else if (type==='course') {
         return {
           width: "495px",
           height: "169px"
         }
+      } else {
+        return {}
       }
     }
 
@@ -56,9 +58,9 @@ function imageResizer(WrappedComponent, type){
 
       return (
         isMobile ?
-        <WrappedComponent {...this.props} style={this.mobileStyle()}/>
+        <WrappedComponent {...this.props} isMobile={isMobile} style={this.mobileStyle()}/>
         :
-        <WrappedComponent {...this.props} style={this.browserStyle()}/>
+        <WrappedComponent {...this.props} isMobile={isMobile} style={this.browserStyle()}/>
       )
     }
   }
@@ -66,4 +68,4 @@ function imageResizer(WrappedComponent, type){
   return baseResizer
 }
 
-export default imageResizer
+export default mobileProps

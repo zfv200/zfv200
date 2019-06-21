@@ -1,6 +1,6 @@
 import React from 'react'
 
-import imageResizer from '../mobileHOCs/imageResizer'
+import mobileProps from '../mobileHOCs/mobileProps'
 
 const Course = (props) => {
 
@@ -13,4 +13,4 @@ const Course = (props) => {
   )
 }
 
-export default imageResizer(Course, 'course')
+export default mobileProps(Course, 'course')

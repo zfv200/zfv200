@@ -2,6 +2,7 @@ import React from 'react'
 // import { Document, Page } from 'react-pdf'
 import FadeIn from 'react-fade-in';
 import ResumeTile from '../components/ResumeTile'
+import mobileProps from '../mobileHOCs/mobileProps'
 
 
 class Experience extends React.Component {
@@ -78,37 +79,64 @@ class Experience extends React.Component {
   }
 
   render(){
-    return (
-      <FadeIn transitionDuration="600">
-      <div className="centered">
-        <h2 onClick={this.handleClick} id="techToggled" className="projectTitle">Technical Experience</h2>
-        {this.state.techToggled ?
-        <FadeIn>
-        <div>
-          {this.renderLanguages()}
-        </div>
-        </FadeIn>
-        : null}
-        <h2 onClick={this.handleClick} id="workToggled" className="projectTitle">Work Experience</h2>
-        {this.state.workToggled ?
+    if(this.props.isMobile){
+      return (
+        <FadeIn transitionDuration="600">
+        <div className="centered">
+          <h2 id="techToggled" className="projectTitle">Technical Experience</h2>
+          <FadeIn>
+          <div>
+            {this.renderLanguages()}
+          </div>
+          </FadeIn>
+          <h2 id="workToggled" className="projectTitle">Work Experience</h2>
+            <FadeIn>
+              <div>
+                {this.renderWork("workComps")}
+              </div>
+            </FadeIn>
+          <h2 id="eduToggled" className="projectTitle">Education</h2>
           <FadeIn>
             <div>
-              {this.renderWork("workComps")}
+              {this.renderWork("eduComps")}
             </div>
           </FadeIn>
-        : null}
-      <h2 onClick={this.handleClick} id="eduToggled" className="projectTitle">Education</h2>
-        {this.state.eduToggled ?
-        <FadeIn>
-          <div>
-            {this.renderWork("eduComps")}
-          </div>
+        </div>
         </FadeIn>
-        : null}
-      </div>
-      </FadeIn>
-    )
+      )
+    } else {
+      return (
+        <FadeIn transitionDuration="600">
+        <div className="centered">
+          <h2 onClick={this.handleClick} id="techToggled" className="projectTitle">Technical Experience</h2>
+          {this.state.techToggled ?
+          <FadeIn>
+          <div>
+            {this.renderLanguages()}
+          </div>
+          </FadeIn>
+          : null}
+          <h2 onClick={this.handleClick} id="workToggled" className="projectTitle">Work Experience</h2>
+          {this.state.workToggled ?
+            <FadeIn>
+              <div>
+                {this.renderWork("workComps")}
+              </div>
+            </FadeIn>
+          : null}
+        <h2 onClick={this.handleClick} id="eduToggled" className="projectTitle">Education</h2>
+          {this.state.eduToggled ?
+          <FadeIn>
+            <div>
+              {this.renderWork("eduComps")}
+            </div>
+          </FadeIn>
+          : null}
+        </div>
+        </FadeIn>
+      )
+    }
   }
 }
 
-export default Experience
+export default mobileProps(Experience)

@@ -25,7 +25,8 @@ class Projects extends React.Component{
     line1: "React/Redux Front End with Typescript, Auth/Sessions with JWT, advanced React features, and Jest/Enzyme tests",
     line2: "Implemented AWS S3 for cloud storage with an integrated custom IBM Watson Visual Recognition machine learning model",
     line3: "Personal Project used as a learning tool for TS, React updates, testing, docker/containers, security practices, and AWS",
-    screenshot: GhostlyRealtyScreenshot
+    screenshot: GhostlyRealtyScreenshot,
+    offset: 0
   },
   {
     title: "Dream Collage",
@@ -37,7 +38,8 @@ class Projects extends React.Component{
     line1: "Created a front-end single-page user interface with React, Redux, and Javascript",
     line2: "Implemented a number of node libraries and third-party APIs to create an interactive user experience",
     line3: "Persisted data with a customized Rails API back-end",
-    screenshot: DreamCollageScreenshot
+    screenshot: DreamCollageScreenshot,
+    offset: 10
   },
   {
     title: "Hoppington Village",
@@ -49,7 +51,8 @@ class Projects extends React.Component{
     line1: "Set up a full rails api back-end with MVC structure and a relational database",
     line2: "Implemented a full user authentication/authorization protocol with JWT",
     line3: "Used custom css to style, structure, and animate a front-end single-page React interface",
-    screenshot: HoppingtonVillageScreenshot
+    screenshot: HoppingtonVillageScreenshot,
+    offset: 66
   },
   {
     title: "Squirrel Survive",
@@ -61,7 +64,8 @@ class Projects extends React.Component{
     line1: "Used object-oriented vanilla JS to create a single-page game application",
     line2: "Manipulated the DOM dynamically with JavaScript’s native methods",
     line3: "Used asynchronous fetch requests to populate and persist user data",
-    screenshot: SquirrelSurviveScreenshot
+    screenshot: SquirrelSurviveScreenshot,
+    offset: 121
   },
   {
     title: "Party With Flatiron",
@@ -73,7 +77,8 @@ class Projects extends React.Component{
     line1: "Used ruby on rails to create a fully CRUD-capable front-end app ",
     line2: "Incorporated SQLite database to persist user data",
     line3: "Used algorithms to develop custom views for unique users",
-    screenshot: PartyWithFlatironScreenshot
+    screenshot: PartyWithFlatironScreenshot,
+    offset: 187
   }]
 
   renderProjects = () => {
