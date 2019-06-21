@@ -65,6 +65,7 @@ class Project extends React.Component{
           <h1 className="projectTitle">{this.props.title}</h1>
             <FadeIn>
             <p className="stack">{this.props.stack}</p>
+            <img src={this.props.screenshot} style={this.props.style}/><br></br>
             <p className="centered stack">{this.props.description}</p>
             <a href={this.props.bhlF} target="_blank">Github</a> <text className="footer-text"> </text> {this.githubBackEnd()} {this.demo()}
             <br></br>
@@ -76,8 +77,6 @@ class Project extends React.Component{
                 <li>{this.props.line3}</li>
                 </ul>
               </div>
-              <br></br>
-              <img src={this.props.screenshot} style={this.props.style}/><br></br>
             </div>
             </FadeIn>
         </div>
