@@ -5,6 +5,7 @@ import FadeIn from 'react-fade-in';
 import jToS from '../JuniorToSenior.png'
 import advancedReactRedux from '../AdvancedReactRedux.png'
 import machineLearning from '../MachineLearning.png'
+import nodeJS from '../NodeJSCourse.png'
 
 import Course from '../components/Course'
 import mobileProps from '../mobileHOCs/mobileProps'
@@ -27,6 +28,11 @@ class Learning extends React.Component {
       title: "Advanced React and Redux",
       image: advancedReactRedux,
       url: "https://www.udemy.com/course/react-redux-tutorial/"
+    },
+    {
+      title: "Learn and Understand NodeJS",
+      image: nodeJS,
+      url: "https://www.udemy.com/understand-nodejs/"
     }
   ]
 
