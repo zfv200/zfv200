@@ -19,10 +19,6 @@ const Footer = (props) => {
       url: "https://www.github.com/zfv200",
       text: "GitHub"
     },
-    {
-      url: "https://medium.com/@zfv200",
-      text: "Medium"
-    }
   ]
 
   const renderLinks = () => {
